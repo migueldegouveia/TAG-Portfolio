@@ -37,5 +37,31 @@ export const proyectos = [
     año: 2022,
     categoria: "Hospitalidad",
     tags: ["cafetería", "vintage", "retro"]
-  }
+  },
+  {
+    slug: "casa-horizonte",
+    titulo: "Casa Horizonte",
+    tipo: "Vivienda unifamiliar",
+    ubicacion: "Madrid",
+    imagenPrincipal: "/proyectos/casa-horizonte.jpg",
+    descripcion: "Vivienda de líneas puras, con grandes ventanales y conexión fluida entre interior y exterior.",
+    galeria: [
+      "/proyectos/casa-horizonte-int1.jpg",
+      "/proyectos/casa-horizonte-int2.jpg"
+    ]
+  },
+  {
+    slug: "villa-nadia",
+    titulo: "Villa Nadia",
+    tipo: "Reforma integral",
+    ubicacion: "Sotogrande, Málaga",
+    imagenPrincipal: "/proyectos/villa-nadia-hero.jpg",
+    descripcion: "Transformación total de una villa clásica en un espacio contemporáneo y luminoso.",
+    galeria: [
+      "/proyectos/villa-nadia-int1.jpg",
+      "/proyectos/villa-nadia-int2.jpg"
+    ]
+  },
 ];
+
+export default proyectos;
