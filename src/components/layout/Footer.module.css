@@ -1,0 +1,131 @@
+.footer {
+  background: #F8F7F3;
+  color: #232323;
+  width: 100%;
+  padding: 3.2rem 0 1.1rem 0;
+  border-top: 2px solid #ece6da;
+  font-family: 'Barlow', 'Montserrat Alternates', Arial, sans-serif;
+  font-weight: 400;
+  margin-top: 4rem;
+}
+
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1300px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+.logoAndText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
+}
+
+.logoFooter {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 0.3rem;
+}
+
+.tagline {
+  font-size: 1.02rem;
+  color: #1800AD;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.footerNav {
+  display: flex;
+  gap: 2.2rem;
+  align-items: center;
+}
+
+.footerLink {
+  color: #232323;
+  font-size: 1.06rem;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  position: relative;
+  transition: color 0.18s;
+}
+
+.footerLink::after {
+  content: '';
+  display: block;
+  width: 0%;
+  height: 2px;
+  background: #1800AD;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  transition: width 0.22s cubic-bezier(.45,0,.55,1);
+}
+
+.footerLink:hover,
+.footerLink:focus {
+  color: #1800AD;
+}
+.footerLink:hover::after,
+.footerLink:focus::after {
+  width: 100%;
+}
+
+.social {
+  display: flex;
+  gap: 1.1rem;
+  align-items: center;
+}
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border-radius: 50%;
+  transition: background 0.18s, box-shadow 0.18s;
+  width: 50px;
+  height: 50px;
+}
+.socialLink:hover,
+.socialLink:focus {
+  background: #ece6da;
+}
+
+.bottomRow {
+  max-width: 1300px;
+  margin: 1.6rem auto 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.98rem;
+  color: #767676;
+  gap: 1rem;
+}
+
+@media (max-width: 900px) {
+  .topRow, .bottomRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.6rem;
+    padding: 0 1rem;
+  }
+  .footerNav {
+    gap: 1.3rem;
+  }
+  .social {
+    gap: 0.6rem;
+  }
+  .logoFooter {
+    width: 46px;
+    height: 46px;
+  }
+}
