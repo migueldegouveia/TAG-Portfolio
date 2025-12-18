@@ -131,4 +131,4 @@ npm run start     # Servidor en producción
 ```
 ---
 
-El proyecto estará disponible próximamente.
+El proyecto está disponible en: https://tag-portfolio-zeta.vercel.app/
