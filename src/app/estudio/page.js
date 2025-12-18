@@ -57,6 +57,11 @@ export default function SobreMiPage() {
           <p className={styles.paragraph}>
             Si quieres conocer más sobre mi trabajo, te invito a explorar mis proyectos o ponerte en contacto conmigo.
           </p>
+
+          <p className={styles.disclaimer}>
+            El contenido visual del portfolio combina proyectos conceptuales y ejemplos desarrollados para ilustrar la línea estética y el enfoque creativo del estudio.
+          </p>
+
         </div>
       </section>
 

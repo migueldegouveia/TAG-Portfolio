@@ -46,15 +46,15 @@ export default function ContactoPage() {
         {/* INFORMACIÓN DE CONTACTO */}
         <div className={styles.contactInfo}>
           <p>Puedes escribirme directamente a:</p>
-          <p className={styles.email}>erikadiasdg@gmail.com</p>
+          <p className={styles.email}>prueba@gmail.com</p>
 
           <p className={styles.socialText}>O seguirnos en Instagram:</p>
           <a
-            href="https://www.instagram.com/tag.estudio/"
+            href="https://www.instagram.com/"
             target="_blank"
             className={styles.socialLink}
           >
-            @tag.estudio
+            @instagram.prueba
           </a>
         </div>
       </section>

@@ -153,30 +153,39 @@
     transform: translateY(-7px) rotate(-45deg);
   }
 
-  /* Menú móvil */
-  .mobileMenu {
-    display: flex;
-    flex-direction: column;
-    gap: 1.8rem;
-    position: fixed;
-    top: 70px;
-    left: 0;
-    width: 100vw;
-    background: #F8F7F3;
-    box-shadow: 0 2px 24px rgba(24,0,173,0.05);
-    padding: 2.4rem 0 2rem 0;
-    z-index: 99;
-    align-items: center;
-  }
+ /* Menú móvil */
+.mobileMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: fixed;
+  top: 100%; /* Se coloca justo debajo del header */
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 70px); /* Ocupa toda la pantalla menos el header */
+  background: #F8F7F3;
+  padding: 3rem 0;
+  z-index: 9999;
+  align-items: center;
+  overflow-y: auto;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
 
-  .mobileLink {
-    font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 1.2rem;
-    color: #232323;
-    text-decoration: none;
-    letter-spacing: 0.02em;
-    transition: color 0.2s ease;
-  }
+/* Enlaces del menú móvil */
+.mobileLink {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1800AD;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: opacity 0.2s ease;
+}
+
+.mobileLink:hover {
+  opacity: 0.7;
+}
+
 
   .mobileLink:hover {
     color: #1800AD;

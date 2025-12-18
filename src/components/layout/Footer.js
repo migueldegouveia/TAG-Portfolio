@@ -12,7 +12,7 @@ export default function Footer() {
         <div className={styles.logoAndText}>
           <img
             src="/logo/LOGO.svg"
-            alt="Erika Dias Arquitectura"
+            alt="TAG Estudio Logo"
             className={styles.logoFooter}
           />
           <span className={styles.tagline}>Arquitectura & Interiorismo</span>
@@ -28,7 +28,7 @@ export default function Footer() {
         {/* REDES */}
         <div className={styles.social}>
           <a
-            href="https://www.instagram.com/tag.estudio/"
+            href="https://www.instagram.com/"
             aria-label="Instagram"
             target="_blank"
             rel="noopener noreferrer"
@@ -41,7 +41,7 @@ export default function Footer() {
           </a>
 
           <a
-            href="mailto:erikadiasdg@gmail.com"
+            href="mailto:prueba@gmail.com"
             aria-label="Email"
             target="_blank"
             rel="noopener noreferrer"
@@ -58,7 +58,7 @@ export default function Footer() {
 
       {/* COPYRIGHT */}
       <div className={styles.bottomRow}>
-        <span>© {new Date().getFullYear()} Erika Dias. Todos los derechos reservados.</span>
+        <span>© {new Date().getFullYear()} TAG Estudio. Algunos proyectos mostrados son propuestas conceptuales utilizadas para representar el estilo visual del estudio.</span>
         <span>Portfolio desarrollado por TAG</span>
       </div>
 
