@@ -107,4 +107,28 @@ El sitio está construido con Next.js y emplea una estructura modular, animacion
 
 ---
 
+## Instalación
+
+Clonar el repositorio:
+
+```bash
+git clone https://github.com/migueldegouveia/TAG-Portfolio
+```
+Instalar dependencias:
+```bash
+npm install
+```
+Iniciar entorno de desarrollo:
+```bash
+npm run dev
+```
+
+Scripts disponibles
+```bash
+npm run dev       # Entorno de desarrollo
+npm run build     # Compilación para producción
+npm run start     # Servidor en producción
+```
+---
+
 El proyecto estará disponible próximamente.
