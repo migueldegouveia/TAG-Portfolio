@@ -11,15 +11,17 @@ export default function HomeProjectCard({ title, image, href, index = 0 }) {
 
     function handleScroll() {
       const rect = card.getBoundingClientRect();
-      const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+      const windowHeight = window.innerHeight;
 
       let visible = 0;
       if (rect.top < windowHeight && rect.bottom > 0) {
-        const progress = Math.min(1, Math.max(0, (windowHeight - rect.top) / (windowHeight + rect.height)));
+        const progress = Math.min(
+          1,
+          Math.max(0, (windowHeight - rect.top) / (windowHeight + rect.height))
+        );
         visible = progress;
       }
 
-      // Fade-in + blur stagger
       if (visible > 0.13) {
         setTimeout(() => {
           card.classList.add(styles.visible);
@@ -32,6 +34,7 @@ export default function HomeProjectCard({ title, image, href, index = 0 }) {
     handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('resize', handleScroll);
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleScroll);
@@ -42,7 +45,7 @@ export default function HomeProjectCard({ title, image, href, index = 0 }) {
     <a href={href} className={styles.card} ref={cardRef} tabIndex={0}>
       <div className={styles.imageBox}>
         <img src={image} alt={title} className={styles.img} />
-        <div className={styles.overlay} />
+        <div className={styles.overlay}></div>
         <div className={styles.text}>{title}</div>
       </div>
     </a>

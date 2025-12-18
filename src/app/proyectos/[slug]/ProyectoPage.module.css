@@ -1,96 +1,100 @@
+/* ===== HERO ===== */
 .heroImgBox {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
-  margin-bottom: 0rem;
   position: relative;
-  z-index: 0;
   max-height: 62vh;
   overflow: hidden;
   background: #e2e0db;
 }
+
 .heroImg {
-  width: 100vw;
+  width: 100%;
   height: 62vh;
   object-fit: cover;
-  display: block;
-  filter: brightness(0.94);
-  transition: filter 0.6s;
+  filter: brightness(0.78);
+  transition: filter 0.6s ease;
 }
+
+.heroImgBox:hover .heroImg {
+  filter: brightness(0.92);
+}
+
+/* ===== INFO SECTION ===== */
 .infoSection {
   max-width: 900px;
   margin: 0 auto;
-  padding: 3.1rem 1.5rem 2.5rem 1.5rem;
+  padding: 3.5rem 1.5rem 3rem 1.5rem;
 }
-.metaBox {
-  margin-bottom: 1.1rem;
-}
-.titulo {
-  font-size: 2.7rem;
-  font-weight: 800;
-  color: #1800ad;
-  margin-bottom: 0.5rem;
-  letter-spacing: -0.01em;
-}
-.meta {
+
+/* ===== FICHA TÉCNICA ===== */
+.ficha {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem 1.4rem;
+  margin-bottom: 2.2rem;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1rem;
   color: #444;
-  margin-bottom: 0;
-  font-size: 1.15rem;
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
 }
-.tipo {
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: .08em;
+
+.ficha p {
+  margin: 0;
 }
-.separator {
-  font-size: 1.1em;
-  color: #bbb;
-}
-.ubicacion {
-  font-weight: 400;
-  letter-spacing: .01em;
-}
+
+/* ===== DESCRIPCIÓN ===== */
 .descripcion {
+  max-width: 680px;
+  margin-bottom: 2.6rem;
+}
+
+.descripcion p {
   font-size: 1.18rem;
   line-height: 1.7;
   color: #232323;
-  margin-bottom: 2.2rem;
-  max-width: 680px;
+  margin-bottom: 1.4rem;
+  font-family: 'Montserrat', Arial, sans-serif;
 }
+
+/* ===== GALERÍA ===== */
 .galeria {
-  margin-top: 2.2rem;
+  margin-top: 2.6rem;
   display: grid;
-  gap: 1.35rem;
+  gap: 1.6rem;
   grid-template-columns: 1fr 1fr;
 }
+
 .galeriaImg {
   width: 100%;
-  border-radius: 12px;
+  border-radius: 10px;
   object-fit: cover;
   height: 320px;
-  box-shadow: 0 2px 16px 0 rgba(30, 30, 30, 0.04);
+  box-shadow: 0 4px 18px rgba(24,0,173,0.08);
   opacity: 0;
   transform: translateY(36px);
   animation: fadeGaleriaImg 0.7s cubic-bezier(.45,0,.55,1) forwards;
 }
+
 .galeriaImg:nth-child(1) { animation-delay: 0.1s; }
-.galeriaImg:nth-child(2) { animation-delay: 0.21s; }
-.galeriaImg:nth-child(3) { animation-delay: 0.31s; }
-.galeriaImg:nth-child(4) { animation-delay: 0.43s; }
+.galeriaImg:nth-child(2) { animation-delay: 0.22s; }
+.galeriaImg:nth-child(3) { animation-delay: 0.34s; }
+.galeriaImg:nth-child(4) { animation-delay: 0.46s; }
+
 @keyframes fadeGaleriaImg {
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
+/* ===== NAVEGACIÓN ENTRE PROYECTOS ===== */
 .navegacion {
   display: flex;
   justify-content: space-between;
   gap: 1.1rem;
-  margin-top: 3.2rem;
+  margin-top: 3.4rem;
 }
+
 .navLink {
   display: flex;
   align-items: center;
@@ -99,46 +103,60 @@
   background: none;
   color: #232323;
   text-decoration: none;
-  border: none;
-  padding: 0.7rem 1.1rem;
-  border-radius: 9px;
-  font-family: inherit;
-  min-width: 0;
-  transition: background 0.18s, color 0.16s;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  transition: background 0.18s ease, color 0.16s ease;
+  font-family: 'Montserrat', Arial, sans-serif;
 }
-.navLink:hover, .navLink:focus {
-  background: #f3f2f0;
-  color: #1800ad;
+
+.navLink:hover,
+.navLink:focus {
+  background: #F2B70522;
+  color: #1800AD;
 }
+
 .arrow {
   font-size: 1.3rem;
-  color: #bbb;
+  color: #888;
   font-weight: 600;
 }
+
 .navTitle {
   font-weight: 700;
   font-size: 1.08em;
   display: block;
 }
+
 .navLoc {
   font-size: 0.96em;
   color: #888;
   display: block;
   margin-top: 1px;
 }
+
 .prev { justify-content: flex-start; }
 .next { justify-content: flex-end; }
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
   .galeria {
     grid-template-columns: 1fr;
   }
+
   .infoSection {
-    padding: 2.2rem 1rem 2rem 1rem;
+    padding: 2.4rem 1rem 2rem 1rem;
   }
-  .titulo {
-    font-size: 2.1rem;
-  }
+
   .galeriaImg {
-    height: 210px;
+    height: 220px;
+  }
+
+  .ficha {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .heroImg {
+    height: 42vh;
   }
 }

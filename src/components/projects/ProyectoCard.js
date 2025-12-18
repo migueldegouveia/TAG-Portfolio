@@ -10,12 +10,13 @@ export default function ProyectoCard({ proyecto, delay = 0 }) {
       <div className={styles.imgBox}>
         <img src={proyecto.imagenPortada} alt={proyecto.titulo} />
       </div>
+
       <div className={styles.info}>
-        <h2>{proyecto.titulo}</h2>
-        <p>{proyecto.descripcion}</p>
-        <span className={styles.meta}>
-          {proyecto.categoria} · {proyecto.año}
-        </span>
+        <h2 className={styles.title}>{proyecto.titulo}</h2>
+
+        <p className={styles.meta}>
+          {proyecto.tipo} · {proyecto.ubicacion} · {proyecto.año}
+        </p>
       </div>
     </a>
   );

@@ -4,6 +4,7 @@ import styles from "./ProyectoPage.module.css";
 
 export default function ProyectoPage({ params }) {
   const { slug } = params;
+
   const idx = proyectos.findIndex(p => p.slug === slug);
   const proyecto = proyectos[idx];
 
@@ -14,35 +15,70 @@ export default function ProyectoPage({ params }) {
 
   return (
     <main>
+
+      {/* ===== HERO ===== */}
       <section className={styles.heroImgBox}>
         <img
           src={proyecto.imagenPrincipal}
           alt={proyecto.titulo}
           className={styles.heroImg}
         />
+
+        <div className={styles.heroOverlay}></div>
+
+        <div className={styles.heroText}>
+          <h1 className={styles.heroTitle}>{proyecto.titulo}</h1>
+          <p className={styles.heroMeta}>
+            {proyecto.tipo} · {proyecto.ubicacion}
+          </p>
+        </div>
       </section>
+
+      {/* ===== INFO ===== */}
       <section className={styles.infoSection}>
-        <div className={styles.metaBox}>
-          <h1 className={styles.titulo}>{proyecto.titulo}</h1>
-          <div className={styles.meta}>
-            <span className={styles.tipo}>{proyecto.tipo}</span>
-            <span className={styles.separator}>·</span>
-            <span className={styles.ubicacion}>{proyecto.ubicacion}</span>
-          </div>
+
+        {/* ===== FICHA TÉCNICA ===== */}
+        <div className={styles.ficha}>
+          <p><strong>Tipo:</strong> {proyecto.tipo}</p>
+          <p><strong>Ubicación:</strong> {proyecto.ubicacion}</p>
+          <p><strong>Año:</strong> {proyecto.año}</p>
+          {proyecto.superficie && (
+            <p><strong>Superficie:</strong> {proyecto.superficie}</p>
+          )}
+          {proyecto.cliente && (
+            <p><strong>Cliente:</strong> {proyecto.cliente}</p>
+          )}
         </div>
+
+        {/* ===== DESCRIPCIÓN ===== */}
         <div className={styles.descripcion}>
-          {proyecto.descripcion}
+          {proyecto.descripcion
+            .split("\n\n")
+            .map((p, i) => <p key={i}>{p}</p>)
+          }
         </div>
+
+        {/* ===== GALERÍA ===== */}
         {proyecto.galeria?.length > 0 && (
           <div className={styles.galeria}>
             {proyecto.galeria.map((img, idx) => (
-              <img key={idx} src={img} alt={proyecto.titulo + " galería " + (idx+1)} className={styles.galeriaImg} />
+              <img
+                key={idx}
+                src={img}
+                alt={`${proyecto.titulo} galería ${idx + 1}`}
+                className={styles.galeriaImg}
+              />
             ))}
           </div>
         )}
-        <div className={styles.navegacion}>
+
+        {/* ===== NAVEGACIÓN ENTRE PROYECTOS ===== */}
+        <nav className={styles.navegacion}>
           {prev && (
-            <Link href={`/proyectos/${prev.slug}`} className={styles.navLink + " " + styles.prev}>
+            <Link
+              href={`/proyectos/${prev.slug}`}
+              className={`${styles.navLink} ${styles.prev}`}
+            >
               <span className={styles.arrow}>&larr;</span>
               <span>
                 <span className={styles.navTitle}>{prev.titulo}</span>
@@ -50,8 +86,12 @@ export default function ProyectoPage({ params }) {
               </span>
             </Link>
           )}
+
           {next && (
-            <Link href={`/proyectos/${next.slug}`} className={styles.navLink + " " + styles.next}>
+            <Link
+              href={`/proyectos/${next.slug}`}
+              className={`${styles.navLink} ${styles.next}`}
+            >
               <span>
                 <span className={styles.navTitle}>{next.titulo}</span>
                 <span className={styles.navLoc}>{next.ubicacion}</span>
@@ -59,7 +99,8 @@ export default function ProyectoPage({ params }) {
               <span className={styles.arrow}>&rarr;</span>
             </Link>
           )}
-        </div>
+        </nav>
+
       </section>
     </main>
   );

@@ -9,19 +9,17 @@ export default function Navbar() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Función para controlar el tamaño de la pantalla
     function handleResize() {
       setIsMobile(window.innerWidth <= 700);
     }
-    // Inicializa el valor
     handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   const links = [
+    { href: "/", label: "Nuestro Trabajo" },
     { href: "/proyectos", label: "Proyectos" },
-    { href: "/servicios", label: "Servicios" },
     { href: "/estudio", label: "Estudio" },
     { href: "/contacto", label: "Contacto" },
   ];
@@ -29,13 +27,15 @@ export default function Navbar() {
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
+        
+        {/* Logo */}
         <div className={styles.logoBox}>
           <Link href="/" className={styles.logoLink}>
             <Image
               src="/logo/LOGO.svg"
               alt="TAG Logo"
-              width={96}
-              height={96}
+              width={120}
+              height={120}
               className={styles.logoImg}
               priority
             />
@@ -55,7 +55,7 @@ export default function Navbar() {
           </ul>
         )}
 
-        {/* Mobile hamburger button */}
+        {/* Mobile hamburger */}
         {isMobile && (
           <button
             className={`${styles.burger} ${open ? styles.burgerActive : ''}`}
@@ -68,7 +68,6 @@ export default function Navbar() {
             <span className={styles.burgerBar}></span>
           </button>
         )}
-
       </nav>
 
       {/* Mobile menu */}
@@ -78,7 +77,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={styles.link}
+              className={styles.mobileLink}
               onClick={() => setOpen(false)}
             >
               {link.label}

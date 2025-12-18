@@ -1,0 +1,164 @@
+.page {
+  background: #F8F7F3;
+  min-height: 100vh;
+  padding-bottom: 2rem; /* evita el hueco enorme antes del footer */
+}
+
+/* ===== HERO ===== */
+.hero {
+  text-align: center;
+  padding: 5rem 1rem 3rem 1rem;
+}
+
+.title {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #1800AD;
+  margin-bottom: 0.4rem;
+}
+
+.subtitle {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.2rem;
+  color: #444;
+  opacity: 0.9;
+}
+
+/* ===== FORMULARIO ===== */
+.formSection {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem 1.5rem; /* reducido para evitar hueco extra */
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 3rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.field label {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #232323;
+}
+
+.field input,
+.field textarea {
+  padding: 0.8rem 1rem;
+  border: 1px solid #d8d4c9;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: #fff;
+  transition: border 0.2s ease;
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: #1800AD;
+  outline: none;
+}
+
+.field textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.submitBtn {
+  padding: 0.9rem 1.6rem;
+  background: #1800AD;
+  color: #F8F7F3;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.05rem;
+  font-family: 'Montserrat', Arial, sans-serif;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.submitBtn:hover {
+  background: #0468BF;
+}
+
+/* ===== CONTACT INFO ===== */
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.email {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1800AD;
+}
+
+.socialText {
+  margin-top: 1rem;
+}
+
+.socialLink {
+  color: #0468BF;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.socialLink:hover {
+  text-decoration: underline;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .formSection {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+}
+
+/* Evita margen extra del último elemento */
+.page > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+.page {
+  animation: fadeUp 0.7s cubic-bezier(.23,1.22,.32,1) both;
+}
+
+.hero {
+  animation: fadeUp 0.7s cubic-bezier(.23,1.22,.32,1) both;
+  animation-delay: 0.05s;
+}
+
+.formSection {
+  animation: fadeUp 0.7s cubic-bezier(.23,1.22,.32,1) both;
+  animation-delay: 0.12s;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(36px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+    

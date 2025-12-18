@@ -4,12 +4,12 @@ html, body {
   box-sizing: border-box;
   background: #F8F7F3;
   color: #232323;
-  font-family: 'Barlow', 'Montserrat Alternates', Arial, sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
   font-size: 16px;
-  font-smooth: always;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
-  overflow-x: hidden; /* <- CRUCIAL */
+  overflow-x: hidden;
 }
 
 *, *::before, *::after {
@@ -21,7 +21,7 @@ html, body {
 a {
   color: inherit;
   text-decoration: none;
-  transition: color 0.15s;
+  transition: color 0.15s ease;
 }
 
 img {
@@ -44,7 +44,30 @@ img {
   width: 8px;
   background: #ece6da;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #d8d7d2;
   border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c0bfb9;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(36px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
