@@ -24,7 +24,6 @@
   left: 0;
   top: 0;
   z-index: 2;
-  /* background se pasa por props */
 }
 
 .content {

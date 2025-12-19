@@ -71,8 +71,10 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile menu */}
-      {isMobile && open && (
-        <div className={styles.mobileMenu}>
+      {isMobile && (
+        <div
+          className={`${styles.mobileMenu} ${open ? styles.mobileMenuVisible : styles.mobileMenuHidden}`}
+        >
           {links.map(link => (
             <Link
               key={link.href}
@@ -85,6 +87,7 @@ export default function Navbar() {
           ))}
         </div>
       )}
+
     </header>
   );
 }

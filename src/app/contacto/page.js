@@ -19,7 +19,7 @@ export default function ContactoPage() {
           method="POST"
           className={styles.form}
         >
-          <input type="hidden" name="_redirect" value="http://localhost:3000/gracias" />
+          <input type="hidden" name="_redirect" value="https://tag-portfolio-zeta.vercel.app/gracias" />
           <input type="hidden" name="_subject" value="Nuevo mensaje desde el portfolio" />
           <input type="text" name="_gotcha" style={{ display: "none" }} />
 

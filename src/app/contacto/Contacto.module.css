@@ -1,7 +1,8 @@
 .page {
   background: #F8F7F3;
   min-height: 100vh;
-  padding-bottom: 2rem; /* evita el hueco enorme antes del footer */
+  padding-bottom: 2rem;
+  margin-bottom: 0 !important;
 }
 
 /* ===== HERO ===== */
@@ -29,7 +30,7 @@
 .formSection {
   max-width: 900px;
   margin: 0 auto;
-  padding: 2rem 1.5rem 3rem 1.5rem; /* reducido para evitar hueco extra */
+  padding: 2rem 1.5rem 3rem 1.5rem;
   display: grid;
   grid-template-columns: 1fr 300px;
   gap: 3rem;
@@ -132,10 +133,7 @@
   }
 }
 
-/* Evita margen extra del último elemento */
-.page > *:last-child {
-  margin-bottom: 0 !important;
-}
+/* ===== ANIMATIONS ===== */
 
 .page {
   animation: fadeUp 0.7s cubic-bezier(.23,1.22,.32,1) both;
