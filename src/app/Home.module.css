@@ -54,6 +54,7 @@
   line-height: 1.7;
   color: #232323;
   margin-bottom: 1.6rem;
+  text-align: justify;
 }
 
 .linkBtn {
@@ -97,6 +98,7 @@
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 18px rgba(24,0,173,0.08);
+  text-align: justify;
 }
 
 .serviceCard h3 {

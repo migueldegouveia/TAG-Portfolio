@@ -72,6 +72,7 @@
   font-size: 1.15rem;
   line-height: 1.7;
   color: #232323;
+  text-align: justify;
 }
 
 /* BLOQUES DE INFORMACIÓN */
@@ -94,6 +95,7 @@
   font-size: 1rem;
   color: #444;
   line-height: 1.5;
+  text-align: justify;
 }
 
 .disclaimer {
